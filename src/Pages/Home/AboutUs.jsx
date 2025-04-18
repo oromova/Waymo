@@ -1,4 +1,5 @@
 import line from '../../assets/line.svg';
+
 const AboutUs = () => {
   const data = [
     {
@@ -12,7 +13,7 @@ const AboutUs = () => {
       title: "Top Hotels"
     },
     {
-      id: 1,
+      id: 3,
       num: "World",
       title: "Top Class Destination"
     }
@@ -20,12 +21,13 @@ const AboutUs = () => {
 
   return (
     <section className='mb-[50px]'>
-      <div className='container max-w-[1320px] mx-auto mt-[50px]'>
-        <div className='flex gap-4 mb-[20px]'>
-          <img src={line} alt="line" />
-          <p className='text-[#8B8B8B]'>About Us</p>
+      <div className='container max-w-[1320px] mx-auto mt-[50px] px-4'>
+        <div className='flex gap-4 mb-[20px] items-center'>
+          <img src={line} alt="line"  />
+          <p className='text-[#8B8B8B] text-[16px] sm:text-[18px]'>About Us</p>
         </div>
-        <div className='text-[60px] leading-[75px]'>
+
+        <div className='text-[32px] sm:text-[30px] md:text-[60px] leading-[45px] sm:leading-[55px] md:leading-[75px]'>
           Our adventure started with a deep love for travel and a mission to share the world's beauty with others. Over the years, we’ve grown into a trusted travel agency, celebrated for our dedication, expertise, and commitment to delivering exceptional experiences.
         </div>
 
@@ -34,21 +36,18 @@ const AboutUs = () => {
             {
               data.map((item, index) => (
                 <div
-                  className={`${index !== data.length - 1 ? 'border-r border-[rgba(139,139,139,0.6)]' : ''
-                    }`}
+                  className={`${index !== data.length - 1 ? 'md:border-r md:border-[rgba(139,139,139,0.6)]' : ''}`}
                   key={item.id}
                 >
-                  <p className='text-[60px]'>
+                  <p className='text-[40px] sm:text-[50px] md:text-[60px]'>
                     {item.num}{index !== data.length - 1 ? '+' : ''}
                   </p>
-                  <p className='text-[22px]'>{item.title}</p>
+                  <p className='text-[18px] sm:text-[20px] md:text-[22px]'>{item.title}</p>
                 </div>
               ))
             }
-
           </div>
         </div>
-
       </div>
     </section>
   );

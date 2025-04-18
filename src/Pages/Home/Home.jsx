@@ -4,6 +4,7 @@ import fb from '../../assets/fb.svg';
 import twitter from '../../assets/new-twitter.svg';
 import arrow from '../../assets/arrow.svg';
 import AboutUs from './AboutUs';
+import Brands from './Brands';
 
 const Home = () => {
   return (
@@ -70,7 +71,7 @@ const Home = () => {
       </div>
       </section>
       <AboutUs/>
-    
+      <Brands/>
     </main>
     
   );
