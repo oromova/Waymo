@@ -20,7 +20,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <section className='mb-[50px]'>
+    <section>
       <div className='container max-w-[1320px] mx-auto mt-[50px] px-4'>
         <div className='flex gap-4 mb-[20px] items-center'>
           <img src={line} alt="line"  />
