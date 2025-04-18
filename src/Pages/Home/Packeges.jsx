@@ -3,8 +3,8 @@ import packages from '../../mock/packages';
 
 const Packages = () => {
   return (
-    <section className="mb-[30px]">
-      <div className="container max-w-[1320px] mx-auto mt-[50px] px-4">
+    <section>
+      <div className="container max-w-[1320px] mx-auto mt-[50px] px-4 mb-[100px]">
         {/* Heading */}
         <div className="flex gap-4 mb-[20px] items-center">
           <img src={line} alt="line" />

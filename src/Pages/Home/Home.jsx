@@ -1,6 +1,7 @@
 import AboutUs from './AboutUs';
 import Brands from './Brands';
 import Destinations from './Destinations';
+import Faq from './Faq';
 import Header from './Header';
 import Packages from './Packeges';
 
@@ -12,6 +13,7 @@ const Home = () => {
       <Brands/>
       <Destinations/>
       <Packages/>
+      <Faq/>
     </main>
     
   );
