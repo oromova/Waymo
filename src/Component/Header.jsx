@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <header className='w-full bg-[rgba(0,0,0,0.6)] h-[70px] fixed top-0 left-0 z-50'>
-      <div className='max-w-[1300px] mx-auto px-4 h-full flex items-center justify-between'>
+      <div className='max-w-[1320px] mx-auto px-4 h-full flex items-center justify-between'>
         
         {/* Logo */}
         <NavLink to='/' className='text-white text-[24px] font-semibold'>

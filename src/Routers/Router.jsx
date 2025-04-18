@@ -5,6 +5,7 @@ import Destination from "../Pages/Destination";
 import Gallery from "../Pages/Gallery";
 import Contact from "../Pages/Contact";
 import TravelPackages from "../Pages/Travel";
+import Home from "../Pages/Home/Home";
 
 export const Router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ export const Router = createBrowserRouter([
     element: <App />,
     errorElement: <Error />,
     children: [
+      { 
+        path: '/', 
+        element: <Home /> 
+      },
       {
         path: "/destination",
         element: <Destination/>
