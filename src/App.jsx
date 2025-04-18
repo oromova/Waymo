@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 const App = () => {
   useEffect(() => {
     AOS.init({
-      once: true, // faqat bir marta animatsiya
+      once: true,
       duration: 1000,
     });
   }, []);
