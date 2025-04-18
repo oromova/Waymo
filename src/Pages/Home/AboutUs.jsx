@@ -32,13 +32,20 @@ const AboutUs = () => {
         <div className='mt-[40px] border-b-[1px] border-b-[rgba(139,139,139,0.6)]'>
           <div className='border-x-[1px] border-x-[rgba(139,139,139,0.6)] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-center gap-8 my-8'>
             {
-              data.map((item) => (
-                <div className='border-r-[1px] border-r-[rgba(139,139,139,0.6)]' key={item.id}>
-                  <p className='text-[60px]'>{item.num}+</p>
-                  <p>{item.title}</p>
+              data.map((item, index) => (
+                <div
+                  className={`${index !== data.length - 1 ? 'border-r border-[rgba(139,139,139,0.6)]' : ''
+                    }`}
+                  key={item.id}
+                >
+                  <p className='text-[60px]'>
+                    {item.num}{index !== data.length - 1 ? '+' : ''}
+                  </p>
+                  <p className='text-[22px]'>{item.title}</p>
                 </div>
               ))
             }
+
           </div>
         </div>
 
