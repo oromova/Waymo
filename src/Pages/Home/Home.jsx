@@ -5,6 +5,7 @@ import twitter from '../../assets/new-twitter.svg';
 import arrow from '../../assets/arrow.svg';
 import AboutUs from './AboutUs';
 import Brands from './Brands';
+import Destinations from './Destinations';
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
         className="w-full h-screen bg-cover bg-center flex items-center justify-center relative"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <div className='container max-w-[1320px] mx-auto'>
+        <div className='container max-w-[1320px] mx-auto mt-[50px] px-4'>
           <div className='flex justify-center items-center'>
             <div className='w-[60%]'>
               <h1 className='font-semibold text-[80px] text-white leading-[90px]'>
@@ -72,6 +73,7 @@ const Home = () => {
       </section>
       <AboutUs/>
       <Brands/>
+      <Destinations/>
     </main>
     
   );
