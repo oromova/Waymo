@@ -1,5 +1,6 @@
 import AboutUs from './AboutUs';
 import Brands from './Brands';
+import Customers from './Customer';
 import Destinations from './Destinations';
 import Faq from './Faq';
 import Header from './Header';
@@ -14,6 +15,7 @@ const Home = () => {
       <Destinations/>
       <Packages/>
       <Faq/>
+      <Customers/>
     </main>
     
   );

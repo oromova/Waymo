@@ -12,13 +12,12 @@ const App = () => {
       duration: 1000,
     });
   }, []);
-
   
   return (
     <div>
       <Header/>
       <Outlet/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
