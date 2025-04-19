@@ -65,7 +65,8 @@ const Customers = () => {
             <div className='flex gap-4 px-4'>
               {
                 customers.map((customer) => (
-                  <div className='w-[424px] h-[217px] p-4 border border-[#C7C7C7] rounded '>
+                  <div  
+                    className='w-[424px] h-[217px] p-4 border border-[#C7C7C7] rounded '>
                     <div className='flex gap-4 mb-[10px]'>
                       <img
                         className='w-[50px] w-[50px] rounded-full'
