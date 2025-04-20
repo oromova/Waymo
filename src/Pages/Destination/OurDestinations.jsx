@@ -6,14 +6,17 @@ const OurDestinations = () => {
   return (
     <section>
       <div className='container max-w-[1320px] mx-auto my-[50px] px-4'>
-        <div className='flex justify-between'>
+        {/* Top bar */}
+        <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-4'>
+          {/* About */}
           <div className='flex gap-4 mb-[20px] items-center'>
             <img src={line} alt="line" />
             <p className='text-[#8B8B8B] text-[16px] sm:text-[18px]'>About Us</p>
           </div>
-          <div className='flex border border-[#A2A2A2] w-[315px] px-4 py-2 rounded-[10px]'>
+          {/* Search */}
+          <div className='flex border border-[#A2A2A2] w-full md:w-[315px] px-4 py-2 rounded-[10px]'>
             <input
-              className='outline-none text-[#A2A2A2] text-[22px]'
+              className='outline-none text-[#A2A2A2] text-[18px] sm:text-[22px] w-full'
               type="text"
               placeholder='Search'
             />
@@ -21,15 +24,15 @@ const OurDestinations = () => {
               <img src={search} alt="search icon" />
             </button>
           </div>
-
         </div>
+
         {/* Destinations */}
-        <div className='grid grid-cols-3 gap-[40px] mt-[50px]'>
-          {/* 1 */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[40px] mt-[50px]'>
           {
-            destinations.map((destination) => (
+            destinations.map((destination, index) => (
               <div
-                className="relative h-[560px] w-[424px] p-4 rounded-[10px] bg-cover bg-center text-white"
+                key={index}
+                className="relative h-[560px] w-full p-4 rounded-[10px] bg-cover bg-center text-white"
                 style={{ backgroundImage: `url(${destination.img})` }}
                 data-aos="fade-up"
                 data-aos-duration="1000"
