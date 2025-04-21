@@ -4,8 +4,8 @@ import Error from '../Component/Error';
 import Destination from "../Pages/Destination/Destination";
 import Gallery from "../Pages/Gallery/Gallery";
 import Contact from "../Pages/Contact";
-import TravelPackages from "../Pages/Travel";
 import Home from "../Pages/Home/Home";
+import TravelPackages from "../Pages/TravelPackages/TravelPackages";
 
 export const Router = createBrowserRouter([
   {
