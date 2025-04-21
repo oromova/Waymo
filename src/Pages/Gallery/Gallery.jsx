@@ -82,43 +82,48 @@ const Gallery = () => {
             </button>
           </div>
         </div>
+
         <div className='text-center mt-[30px]'>
-          <h2 className='text-[60px]'>
+          <h2 className='text-[32px] sm:text-[48px] md:text-[60px]'>
             Journey in
             <span className='font-semibold'> Japan</span>
           </h2>
         </div>
 
-        <div className='mt-[50px] flex justify-between gap-[20px]'>
+        <div className='mt-[50px] flex justify-between flex-wrap lg:flex-nowrap gap-[20px]'>
           {/* 1 */}
-          <div>
-            <img className='w-[424px] h-[630px] rounded-[10px] object-cover object-center'
+          <div className='w-full sm:w-[48%] lg:w-[424px]'>
+            <img className='w-full h-[630px] rounded-[10px] object-cover object-center'
               src={img1} alt="Japan image" />
           </div>
+
           {/* 2 */}
-          <div>
-            <img className='w-[424px] h-[303px] rounded-[10px] mb-[24px] object-cover object-center'
+          <div className='w-full sm:w-[48%] lg:w-[424px]'>
+            <img className='w-full h-[303px] rounded-[10px] mb-[24px] object-cover object-center'
               src={img2} alt="Japan image" />
-            <img className='w-[424px] h-[303px] rounded-[10px] object-cover object-center'
+            <img className='w-full h-[303px] rounded-[10px] object-cover object-center'
               src={img3} alt="Japan image" />
           </div>
+
           {/* 3 */}
-          <div>
-            <img className='w-[424px] h-[630px] rounded-[10px] object-cover object-center'
+          <div className='w-full sm:w-[48%] lg:w-[424px]'>
+            <img className='w-full h-[630px] rounded-[10px] object-cover object-center'
               src={img4} alt="Japan image" />
           </div>
         </div>
+
+
       </div>
-        {/* Journey in America */}
+      {/* Journey in America */}
       <div className='bg-[#F3F3F3] mt-[90px] mb-[60px]'>
-        <div className='w-[1320px] mx-auto '>
+        <div className='w-full max-w-[1320px] mx-auto px-4'>
           <div className='text-center py-[60px]'>
-            <h2 className='text-[60px] pb-[30px]'>
-              Journey in
-              <span className='font-semibold'> America</span>
+            <h2 className='text-[32px] sm:text-[48px] md:text-[60px] pb-[30px]'>
+              Journey in <span className='font-semibold'>America</span>
             </h2>
             <>
-              <Swiper className='h-[600px]'
+              <Swiper
+                className='h-[250px] sm:h-[400px] md:h-[600px]'
                 spaceBetween={30}
                 effect={'fade'}
                 navigation={true}
@@ -131,40 +136,42 @@ const Gallery = () => {
                 }}
                 modules={[EffectFade, Navigation, Pagination, Autoplay]}
               >
-                {
-                  swiper.map((item) => (
-                    <SwiperSlide
-                      key={item.id}>
-                      <img className='w-full object-cover object-center rounded-xl' src={item.img} />
-                    </SwiperSlide>
-                  ))
-                }
+                {swiper.map((item) => (
+                  <SwiperSlide key={item.id}>
+                    <img
+                      className='w-full h-full object-cover object-center rounded-xl'
+                      src={item.img}
+                      alt="America"
+                    />
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </>
           </div>
         </div>
       </div>
-        {/* Journey in Turkey */}
-      <div className='w-full mx-auto text-center mb-[60px]'>
-        <h2 className='text-[60px] pb-[30px]'>
-          Journey in
-          <span className='font-semibold'> Turkey</span>
-        </h2>
-        <Marquee>
-          <img 
-            className='w-[536px] h-[388px] rounded-[10px] mr-[20px]'
-            src={img9} alt="Turkey image" 
-          />
-          <img 
-            className='w-[536px] h-[388px] rounded-[10px] mr-[20px]'
-            src={img10} alt="Turkey image" 
-          />
-          <img 
-            className='w-[536px] h-[388px] rounded-[10px] mr-[20px]'
-            src={img11} alt="Turkey image" 
-          />
-        </Marquee>
-      </div>
+
+      {/* Journey in Turkey */}
+      <div className='w-full max-w-[1320px] mx-auto text-center mb-[60px]'>
+  <h2 className='text-[32px] sm:text-[48px] md:text-[60px] pb-[30px]'>
+    Journey in <span className='font-semibold'>Turkey</span>
+  </h2>
+  <Marquee>
+    <img
+      className='w-[80%] sm:w-[350px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[388px] rounded-[10px] mr-[20px]'
+      src={img9} alt="Turkey image"
+    />
+    <img
+      className='w-[80%] sm:w-[350px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[388px] rounded-[10px] mr-[20px]'
+      src={img10} alt="Turkey image"
+    />
+    <img
+      className='w-[80%] sm:w-[350px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[388px] rounded-[10px] mr-[20px]'
+      src={img11} alt="Turkey image"
+    />
+  </Marquee>
+</div>
+
     </section>
   );
 };
