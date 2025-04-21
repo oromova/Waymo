@@ -1,20 +1,63 @@
-import { useState } from 'react';
 import search from '../../assets/search.svg';
 import line from '../../assets/line.svg';
 import Heading from '../../Component/Heading';
-import img from '../../assets/gallary-bg.jpeg'
-import img1 from '../../assets/japan1.jpeg'
-import img2 from '../../assets/japan2.jpeg'
-import img3 from '../../assets/japan3.jpeg'
-import img4 from '../../assets/japan4.jpeg'
+import img from '../../assets/gallary-bg.jpeg';
+import img1 from '../../assets/japan1.jpeg';
+import img2 from '../../assets/japan2.jpeg';
+import img3 from '../../assets/japan3.jpeg';
+import img4 from '../../assets/japan4.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import img5 from '../../assets/america1.jpeg';
+import img6 from '../../assets/america2.jpg';
+import img7 from '../../assets/america3.jpg';
+import img8 from '../../assets/america4.jpg';
+import img9 from '../../assets/turkey1.jpeg';
+import img10 from '../../assets/turkey2.jpeg';
+import img11 from '../../assets/turkey3.jpeg';
+
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Marquee from 'react-fast-marquee';
 
 const Gallery = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  
-    // Filter qilish
-    // const filteredDestinations = destinations.filter((destination) =>
-    //   destination.title.toLowerCase().includes(searchTerm.toLowerCase())
-    // );
+  const swiper = [
+    {
+      id: 1,
+      img: img5
+    },
+    {
+      id: 2,
+      img: img6
+    },
+    {
+      id: 3,
+      img: img7
+    },
+    {
+      id: 4,
+      img: img8
+    },
+    {
+      id: 5,
+      img: img5
+    },
+    {
+      id: 6,
+      img: img6
+    },
+    {
+      id: 7,
+      img: img7
+    },
+    {
+      id: 8,
+      img: img8
+    },
+  ];
+
 
   return (
     <section>
@@ -32,7 +75,6 @@ const Gallery = () => {
               className='outline-none text-[#A2A2A2] text-[18px] sm:text-[22px] w-full'
               type="text"
               placeholder='Search'
-              value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button className='cursor-pointer'>
@@ -40,27 +82,88 @@ const Gallery = () => {
             </button>
           </div>
         </div>
+        <div className='text-center mt-[30px]'>
+          <h2 className='text-[60px]'>
+            Journey in
+            <span className='font-semibold'> Japan</span>
+          </h2>
+        </div>
 
-        {/* Journey in Japan */}
         <div className='mt-[50px] flex justify-between gap-[20px]'>
           {/* 1 */}
           <div>
-            <img className='w-[424px] h-[630px] rounded-[10px]'
-             src={img1} alt="Japan image" />
+            <img className='w-[424px] h-[630px] rounded-[10px] object-cover object-center'
+              src={img1} alt="Japan image" />
           </div>
           {/* 2 */}
           <div>
-            <img className='w-[424px] h-[303px] rounded-[10px] mb-[24px]'
+            <img className='w-[424px] h-[303px] rounded-[10px] mb-[24px] object-cover object-center'
               src={img2} alt="Japan image" />
-            <img className='w-[424px] h-[303px] rounded-[10px]'
+            <img className='w-[424px] h-[303px] rounded-[10px] object-cover object-center'
               src={img3} alt="Japan image" />
           </div>
           {/* 3 */}
           <div>
-            <img className='w-[424px] h-[630px] rounded-[10px]'
-             src={img4} alt="Japan image" />
+            <img className='w-[424px] h-[630px] rounded-[10px] object-cover object-center'
+              src={img4} alt="Japan image" />
           </div>
         </div>
+      </div>
+        {/* Journey in America */}
+      <div className='bg-[#F3F3F3] mt-[90px] mb-[60px]'>
+        <div className='w-[1320px] mx-auto '>
+          <div className='text-center py-[60px]'>
+            <h2 className='text-[60px] pb-[30px]'>
+              Journey in
+              <span className='font-semibold'> America</span>
+            </h2>
+            <>
+              <Swiper className='h-[600px]'
+                spaceBetween={30}
+                effect={'fade'}
+                navigation={true}
+                pagination={{
+                  clickable: true,
+                }}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false
+                }}
+                modules={[EffectFade, Navigation, Pagination, Autoplay]}
+              >
+                {
+                  swiper.map((item) => (
+                    <SwiperSlide
+                      key={item.id}>
+                      <img className='w-full object-cover object-center rounded-xl' src={item.img} />
+                    </SwiperSlide>
+                  ))
+                }
+              </Swiper>
+            </>
+          </div>
+        </div>
+      </div>
+        {/* Journey in Turkey */}
+      <div className='w-full mx-auto text-center mb-[60px]'>
+        <h2 className='text-[60px] pb-[30px]'>
+          Journey in
+          <span className='font-semibold'> Turkey</span>
+        </h2>
+        <Marquee>
+          <img 
+            className='w-[536px] h-[388px] rounded-[10px] mr-[20px]'
+            src={img9} alt="Turkey image" 
+          />
+          <img 
+            className='w-[536px] h-[388px] rounded-[10px] mr-[20px]'
+            src={img10} alt="Turkey image" 
+          />
+          <img 
+            className='w-[536px] h-[388px] rounded-[10px] mr-[20px]'
+            src={img11} alt="Turkey image" 
+          />
+        </Marquee>
       </div>
     </section>
   );

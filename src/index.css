@@ -4,3 +4,23 @@ body{
   padding: 0;
   margin: 0;
 }
+
+*{
+  box-sizing: border-box;
+}
+
+/* styles.css yoki App.css ichiga */
+.custom-swiper-pagination .swiper-pagination {
+  background-color: #000; /* qora background */
+  padding: 10px 0;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  background-color: white; /* oddiy dumaloqlar oq */
+  opacity: 0.5;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: white; /* active dumaloq ham oq */
+  opacity: 1;
+}
