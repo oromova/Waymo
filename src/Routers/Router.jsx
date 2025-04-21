@@ -26,7 +26,7 @@ export const Router = createBrowserRouter([
         element: <Gallery/>
       },
       {
-        path: "/travel",
+        path: "/travel Packages",
         element: <TravelPackages/>
       },
       {

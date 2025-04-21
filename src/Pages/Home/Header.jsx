@@ -24,7 +24,8 @@ const Header = () => {
                   className='w-[50px] h-[50px] rounded-full border-2 border-[#fff] flex items-center justify-center transition-all transform hover:scale-110'
                   href="https://www.instagram.com/"
                 >
-                  <img src={insta} alt="instagram icon" className="w-full h-full p-[10px] object-cover rounded-full" />
+                  <img src={insta} alt="instagram icon" 
+                    className="w-full h-full p-[10px] object-cover rounded-full" />
                 </a>
               </div>
 

@@ -18,7 +18,7 @@ const Header = () => {
 
         {/* Desktop nav */}
         <nav className='hidden md:flex gap-6 text-white font-[18px]'>
-          {['/destination', '/gallery', '/travel', '/contact'].map((path, i) => (
+          {['/destination', '/gallery', '/travel Packages', '/contact'].map((path, i) => (
             <NavLink
               key={i}
               to={path}
