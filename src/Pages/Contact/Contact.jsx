@@ -170,16 +170,22 @@ const Contact = () => {
       </div>
 
       {/* Map */}
-      <div className="w-[1320px] mx-auto py-[80px]">
-        <h2 className="text-[60px] text-center">
-          Find Us on Map
-        </h2>
-        <p className="text-center w-[996px] mx-auto text-[#A2A2A2] text-[20px]">
-          We are located in the heart of the city, easily accessible by public transport and just a few minutes away from major landmarks. Whether you’re traveling by car or train, finding us is simple and straightforward. Use the map below to get directions and plan your visit.
-        </p>
-        <img className="w-full h-[581px] rounded mt-[50px] object-cover"
-          src={map} alt="map" />
+      <div className="w-full px-4 py-[80px]">
+        <div className="max-w-[1320px] mx-auto">
+          <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[60px] text-center">
+            Find Us on Map
+          </h2>
+          <p className="text-center max-w-[996px] mx-auto text-[#A2A2A2] text-[16px] sm:text-[18px] md:text-[20px]">
+            We are located in the heart of the city, easily accessible by public transport and just a few minutes away from major landmarks. Whether you’re traveling by car or train, finding us is simple and straightforward. Use the map below to get directions and plan your visit.
+          </p>
+          <img
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[581px] rounded mt-[50px] object-cover"
+            src={map}
+            alt="map"
+          />
+        </div>
       </div>
+
     </section>
   );
 };
