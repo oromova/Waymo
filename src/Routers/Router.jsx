@@ -3,9 +3,9 @@ import App from "../App";
 import Error from '../Component/Error';
 import Destination from "../Pages/Destination/Destination";
 import Gallery from "../Pages/Gallery/Gallery";
-import Contact from "../Pages/Contact";
 import Home from "../Pages/Home/Home";
 import TravelPackages from "../Pages/TravelPackages/TravelPackages";
+import Contact from "../Pages/Contact/Contact";
 
 export const Router = createBrowserRouter([
   {

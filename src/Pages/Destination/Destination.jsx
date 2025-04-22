@@ -1,4 +1,3 @@
-import React from 'react';
 import Heading from '../../Component/Heading';
 import img from '../../assets/destination-bg.jpeg';
 import { useState } from 'react';

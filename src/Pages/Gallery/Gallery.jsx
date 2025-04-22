@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import search from '../../assets/search.svg';
 import line from '../../assets/line.svg';
 import Heading from '../../Component/Heading';

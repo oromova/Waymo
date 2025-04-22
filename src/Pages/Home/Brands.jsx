@@ -1,4 +1,3 @@
-import React from 'react';
 import logo1 from '../../assets/brand1.svg';
 import logo2 from '../../assets/brand2.svg';
 import Marquee from 'react-fast-marquee';
