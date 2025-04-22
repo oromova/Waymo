@@ -27,7 +27,7 @@ const Heading = ({image, title}) => {
               <div className='mt-[20px] flex justify-end'>
                 <a
                   className='w-[50px] h-[50px] rounded-full border-2 border-[#fff] flex items-center justify-center transition-all transform hover:scale-110'
-                  href="https://twitter.com/"
+                  href="https://www.twitter.com/"
                 >
                   <img src={twitter} alt="twitter icon" className="w-full h-full p-[10px] object-cover rounded-full" />
                 </a>

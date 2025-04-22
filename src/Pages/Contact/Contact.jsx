@@ -3,8 +3,44 @@ import img from '../../assets/contact.jpeg';
 import logo1 from '../../assets/call.svg';
 import logo2 from '../../assets/email.svg';
 import logo3 from '../../assets/contact-location.svg';
+import map from '../../assets/contact-map.png';
+import axios from "axios";
+import { useState } from "react";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+
+  const sendMessage = (event) => {
+    setLoading(true);
+    event.preventDefault();
+    const token = '7420606017:AAEh1OL5BuVtS93SxN4I5shkrl5Hj8nMqis';
+    const chat_id = 6135129095;
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+    const name = document.getElementById("name").value;
+    const surname = document.getElementById("surname").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const textarea = document.getElementById("textarea").value;
+    const messageContent = `Ismi ${name} \nFamiliyasi: ${surname} \nTel: ${phone} \nEmail: ${email} \nMessage: ${textarea}`;
+
+    axios({
+      url: url,
+      method: "POST",
+      data: {
+        "chat_id": chat_id,
+        "text": messageContent,
+      }
+    }).then((res) => {
+      document.getElementById("myForm").reset();
+      alert("Successfully sent");
+    }).catch((error) => {
+      console.log("Error", error);
+    }).finally(() => {
+      setLoading(false);
+    });
+  };
+
+
   return (
     <section>
       <Heading image={img} title={'Contact Us'} />
@@ -58,7 +94,7 @@ const Contact = () => {
 
             {/* Contact Input */}
             <div className="w-full lg:w-[60%]">
-              <form>
+              <form id="myForm" onSubmit={sendMessage}>
                 <div className="text-[#8D8D8D] font-medium text-[12px]">
                   {/* Name & Surname */}
                   <div className="flex flex-col gap-[40px] lg:flex-row">
@@ -66,7 +102,9 @@ const Contact = () => {
                     <div className="w-full text-[14px]">
                       <label className="block text-[16px]">First Name</label>
                       <input
+                        id="name"
                         type="text"
+                        required
                         className="w-full border-b border-[#8D8D8D] px-4 py-3 focus:outline-none focus:border-[#011C2A]"
                       />
                     </div>
@@ -74,7 +112,9 @@ const Contact = () => {
                     <div className="w-full text-[14px]">
                       <label className="block text-[16px]">Last Name</label>
                       <input
+                        id="surname"
                         type="text"
+                        required
                         className="w-full border-b border-[#8D8D8D] px-4 py-3 focus:outline-none focus:border-[#011C2A]"
                       />
                     </div>
@@ -86,7 +126,9 @@ const Contact = () => {
                     <div className="w-full text-[14px]">
                       <label className="block text-[16px]">Email</label>
                       <input
+                        id="email"
                         type="email"
+                        required
                         className="w-full border-b border-[#8D8D8D] px-4 py-3 focus:outline-none focus:border-[#011C2A]"
                       />
                     </div>
@@ -94,7 +136,9 @@ const Contact = () => {
                     <div className="w-full text-[14px]">
                       <label className="block text-[16px]">Phone Number</label>
                       <input
+                        id="phone"
                         type="tel"
+                        required
                         className="w-full border-b border-[#8D8D8D] px-4 py-3 focus:outline-none focus:border-[#011C2A]"
                       />
                     </div>
@@ -104,6 +148,7 @@ const Contact = () => {
                   <div className="mt-[30px] lg:mt-[60px]">
                     <label className="block text-[16px] font-medium mb-2">Message</label>
                     <textarea
+                      id="textarea"
                       rows="3"
                       placeholder="Write your message..."
                       className="w-full border-b text-[#8D8D8D] border-[#8D8D8D] text-[14px] py-3 focus:outline-none focus:border-[#011C2A]"
@@ -115,7 +160,7 @@ const Contact = () => {
                     type="submit"
                     className="bg-[#011C2B] text-white px-6 py-3 rounded-md text-[16px] hover:bg-[#023147] font-medium transition mt-[30px] lg:mt-[60px]"
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </form>
@@ -124,13 +169,16 @@ const Contact = () => {
         </div>
       </div>
 
+      {/* Map */}
       <div className="w-[1320px] mx-auto py-[80px]">
         <h2 className="text-[60px] text-center">
           Find Us on Map
         </h2>
-        <p className="text-center">
+        <p className="text-center w-[996px] mx-auto text-[#A2A2A2] text-[20px]">
           We are located in the heart of the city, easily accessible by public transport and just a few minutes away from major landmarks. Whether you’re traveling by car or train, finding us is simple and straightforward. Use the map below to get directions and plan your visit.
         </p>
+        <img className="w-full h-[581px] rounded mt-[50px] object-cover"
+          src={map} alt="map" />
       </div>
     </section>
   );
