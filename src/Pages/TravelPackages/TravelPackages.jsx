@@ -26,34 +26,35 @@ const TravelPackages = () => {
   return (
     <section>
       <Heading image={img} title={'Travel Packages'} />
+
       <div className='max-w-[1320px] w-full mx-auto px-4'>
 
-        {/* Filter buttons and search */}
-        <div className='flex flex-col lg:flex-row justify-between gap-6 mt-16'>
-          <div className='flex flex-wrap gap-4 items-center'>
+        {/* Filter & Search */}
+        <div className='flex flex-col gap-6 lg:flex-row justify-between mt-16'>
+
+          {/* Filter Tabs */}
+          <div className='flex flex-wrap gap-4 items-center overflow-x-auto scrollbar-hide'>
             {categories.map((category, index) => (
-              <div key={index} className='flex items-center gap-2'>
-                <p
-                  onClick={() => setSelectedCategory(category)}
-                  className={`text-[18px] sm:text-[22px] px-4 py-2 rounded-xl cursor-pointer hover:border hover:border-[#ccc] active:bg-[#e2e2e2] active:border-black transition-all duration-200 ${
-                    selectedCategory === category ? 'border border-black bg-[#e2e2e2]' : ''
-                  }`}
-                >
-                  {category}
-                </p>
-                {category === 'All Packages' && <img src={line} alt="line" className='hidden sm:block' />}
-              </div>
+              <p
+                key={index}
+                onClick={() => setSelectedCategory(category)}
+                className={`text-[18px] sm:text-[22px] px-4 py-2 rounded-xl cursor-pointer 
+                hover:border hover:border-[#ccc] active:bg-[#e2e2e2] active:border-black transition-all duration-200
+                ${selectedCategory === category ? 'border border-black bg-[#e2e2e2]' : ''}`}
+              >
+                {category}
+              </p>
             ))}
           </div>
 
-          {/* Search input */}
-          <div className='flex border border-[#A2A2A2] w-full lg:w-[315px] px-4 py-2 rounded-[10px]'>
+          {/* Search Input */}
+          <div className='w-full lg:w-[315px] flex items-center border border-[#A2A2A2] px-4 py-2 rounded-[10px]'>
             <input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className='outline-none text-[#A2A2A2] text-[18px] sm:text-[22px] w-full bg-transparent'
               type="text"
               placeholder='Search'
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button className='cursor-pointer'>
               <img src={search} alt="search icon" />
@@ -61,34 +62,53 @@ const TravelPackages = () => {
           </div>
         </div>
 
-        {/* Package cards */}
+        {/* Card Grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 my-16'>
           {filteredPackages.map((pkg) => (
-            <div key={pkg.id} className='w-full sm:w-[90%] md:w-[48%] xl:w-[424px] h-fit border-[2px] rounded-xl transition-transform hover:scale-[1.02]' data-aos="fade-up">
-              <img className='w-full h-[300px] md:h-[400px] xl:h-[424px] rounded-t-xl object-cover' src={pkg.img} alt={pkg.title} />
+            <div key={pkg.id}
+              className='w-full border-[2px] rounded-xl transition-transform hover:scale-[1.02]'
+              data-aos="fade-up"
+            >
+              {/* Image */}
+              <div>
+                <img
+                  className='w-full h-[300px] sm:h-[350px] md:h-[400px] xl:h-[424px] rounded-t-xl object-cover'
+                  src={pkg.img} alt={pkg.title}
+                />
+              </div>
+
+              {/* Content */}
               <div className='p-[15px]'>
                 <h3 className='py-[5px] font-bold text-[20px]'>{pkg.title}</h3>
+
+                {/* Destination */}
                 <div className='flex justify-between mt-[20px]'>
                   <div className='flex items-center gap-2'>
-                    <img className='w-[24px] h-[24px]' src={pkg.logo1} alt='location logo' />
+                    <img className='w-[24px] h-[24px]' src={pkg.logo1} alt='location' />
                     <p className='text-[18px]'>Destination:</p>
                   </div>
                   <p className='text-[18px] text-[#676767]'>{pkg.destination}</p>
                 </div>
+
+                {/* Duration */}
                 <div className='flex justify-between mt-[20px]'>
                   <div className='flex items-center gap-2'>
-                    <img className='w-[24px] h-[24px]' src={pkg.logo2} alt='duration logo' />
+                    <img className='w-[24px] h-[24px]' src={pkg.logo2} alt='duration' />
                     <p className='text-[18px]'>Duration:</p>
                   </div>
                   <p className='text-[18px] text-[#676767]'>{pkg.duration}</p>
                 </div>
+
+                {/* Dates */}
                 <div className='flex justify-between mt-[20px]'>
                   <div className='flex items-center gap-2'>
-                    <img className='w-[24px] h-[24px]' src={pkg.logo3} alt='dates logo' />
+                    <img className='w-[24px] h-[24px]' src={pkg.logo3} alt='dates' />
                     <p className='text-[18px]'>Dates:</p>
                   </div>
                   <p className='text-[18px] text-[#676767]'>{pkg.date}</p>
                 </div>
+
+                {/* Price */}
                 <div className='flex justify-between font-bold text-[20px] my-[20px]'>
                   <p>Price:</p>
                   <p>{pkg.price}</p>
@@ -97,6 +117,7 @@ const TravelPackages = () => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
