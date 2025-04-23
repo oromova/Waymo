@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="max-w-[1320px] mx-auto px-4 py-16">
           <div className="flex flex-col lg:flex-row gap-[40px] lg:gap-[100px]">
             {/* Contact Information */}
-            <div className="w-full lg:w-[40%] bg-[#011C2B] rounded-xl px-8 py-12 relative">
+            <div className="w-full lg:w-[40%] bg-[#011C2B] rounded-xl px-8 py-12 relative overflow-hidden">
               <h4 className="font-bold text-[24px] sm:text-[28px] text-white mb-2">
                 Contact Information
               </h4>
