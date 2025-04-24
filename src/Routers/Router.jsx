@@ -6,6 +6,7 @@ import Gallery from "../Pages/Gallery/Gallery";
 import Home from "../Pages/Home/Home";
 import TravelPackages from "../Pages/TravelPackages/TravelPackages";
 import Contact from "../Pages/Contact/Contact";
+import Turkey from "../Pages/SinglePage/Turkey";
 
 export const Router = createBrowserRouter([
   {
@@ -26,13 +27,17 @@ export const Router = createBrowserRouter([
         element: <Gallery/>
       },
       {
-        path: "/travel Packages",
+        path: "/travelPackages",
         element: <TravelPackages/>
       },
       {
         path: "/contact",
         element: <Contact/>
       },
+      {
+        path: "/single/:id",
+        element: <Turkey/>
+      }
     ]
   }
 ]);

@@ -5,11 +5,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import search from '../../assets/search.svg';
-import line from '../../assets/Line1.svg';
+import { useNavigate } from 'react-router-dom';
 
 const TravelPackages = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Packages');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -22,6 +24,10 @@ const TravelPackages = () => {
     const matchesSearch = pkg.destination.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const singleNavigate = (id) => {
+    navigate(`/single/${id}`);
+  };
 
   return (
     <section>
@@ -65,7 +71,9 @@ const TravelPackages = () => {
         {/* Card Grid */}
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 my-16'>
           {filteredPackages.map((pkg) => (
-            <div key={pkg.id}
+            <div
+              onClick={() => singleNavigate(pkg?.id)}
+              key={pkg?.id}
               className='w-full border-[2px] rounded-xl transition-transform hover:scale-[1.02]'
               data-aos="fade-up"
             >
@@ -73,7 +81,7 @@ const TravelPackages = () => {
               <div>
                 <img
                   className='w-full h-[300px] sm:h-[350px] md:h-[400px] xl:h-[424px] rounded-t-xl object-cover'
-                  src={pkg.img} alt={pkg.title}
+                  src={pkg?.img} alt={pkg?.title}
                 />
               </div>
 
