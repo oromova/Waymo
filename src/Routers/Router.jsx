@@ -6,7 +6,7 @@ import Gallery from "../Pages/Gallery/Gallery";
 import Home from "../Pages/Home/Home";
 import TravelPackages from "../Pages/TravelPackages/TravelPackages";
 import Contact from "../Pages/Contact/Contact";
-import Turkey from "../Pages/SinglePage/Turkey";
+import SinglePage from "../Pages/SinglePage/SinglePage";
 
 export const Router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ export const Router = createBrowserRouter([
       },
       {
         path: "/single/:id",
-        element: <Turkey/>
+        element: <SinglePage/>
       }
     ]
   }

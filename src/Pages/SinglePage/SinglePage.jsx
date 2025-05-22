@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { travelPackeges } from '../../mock/travelPackages';
 
-const Turkey = () => {
+const SinglePage = () => {
   const {id} = useParams();
 
   const selected = travelPackeges.find(pkg => pkg.id === parseInt(id));
@@ -22,4 +22,4 @@ const Turkey = () => {
   );
 };
 
-export default Turkey;
+export default SinglePage;

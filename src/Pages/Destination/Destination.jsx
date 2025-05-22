@@ -14,7 +14,7 @@ const Destination = () => {
   );
 
   return (
-    <section>
+    <section id='destination'>
       <Heading image={img} title={'Explore Destinations'} />
       <div className='container max-w-[1320px] mx-auto my-[50px] px-4'>
         {/* Heading */}

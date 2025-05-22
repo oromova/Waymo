@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // Hamburger va Close ikonka
+import { Menu, X } from 'lucide-react'; 
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,13 +33,13 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Language Selector
+        {/* Language Selector */}
         <div className='hidden md:block text-white'>
           <select className='uppercase bg-transparent outline-none'>
             <option className='text-black' value="eng">En</option>
             <option className='text-black' value="ru">Ru</option>
           </select>
-        </div> */}
+        </div>
 
         {/* Mobile burger */}
         <div className='md:hidden'>
@@ -67,11 +67,11 @@ const Header = () => {
             </NavLink>
           ))}
 
-          {/* Mobile language select
+          Mobile language select
           <select className='uppercase bg-black border rounded-[5px] border-white mt-2 text-white px-2 py-1'>
             <option value="eng">En</option>
             <option value="ru">Ru</option>
-          </select> */}
+          </select>
         </div>
       )}
     </header>

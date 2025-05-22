@@ -24,14 +24,14 @@ const Footer = () => {
           </p>
 
           {/* button */}
-          <div className='bg-white w-[195px] h-[57px] rounded-full flex items-center justify-between px-3 mx-auto mt-[30px]'>
+          <a href='/contact' className='bg-white w-[195px] h-[57px] rounded-full flex items-center justify-between px-3 mx-auto mt-[30px]'>
             <p className='font-medium text-black ml-[10px] text-[18px]'>Get Started</p>
             <a href="/">
-              <button className='w-[45px] h-[45px] bg-black rounded-full flex items-center justify-center cursor-pointer'>
+              <a href='/contact' className='w-[45px] h-[45px] bg-black rounded-full flex items-center justify-center cursor-pointer'>
                 <img src={arrow} alt="arrow right" />
-              </button>
+              </a>
             </a>
-          </div>
+          </a>
 
           {/* Navigation */}
           <div className='w-full max-w-[1320px] mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-0 p-6 mt-[50px]'>
@@ -45,17 +45,17 @@ const Footer = () => {
               {/* 1 */}
               <div>
                 <h4 className='font-medium text-[24px]'>Navigations</h4>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>Destinations</p></a>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>Gallery</p></a>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>Travel Packages</p></a>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>Contact</p></a>
+                <a href="/destination"><p className='text-[18px] lg:text-[20px]'>Destinations</p></a>
+                <a href="/gallery"><p className='text-[18px] lg:text-[20px]'>Gallery</p></a>
+                <a href="/travelPackages"><p className='text-[18px] lg:text-[20px]'>Travel Packages</p></a>
+                <a href="/contact"><p className='text-[18px] lg:text-[20px]'>Contact</p></a>
               </div>
               {/* 2 */}
               <div>
                 <h4 className='font-medium text-[24px]'>Social</h4>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>Instagram</p></a>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>X</p></a>
-                <a href="/"><p className='text-[18px] lg:text-[20px]'>Youtube</p></a>
+                <a href="https://www.instagram.com/"><p className='text-[18px] lg:text-[20px]'>Instagram</p></a>
+                <a href="https://x.com/"><p className='text-[18px] lg:text-[20px]'>X</p></a>
+                <a href="https://www.youtube.com/"><p className='text-[18px] lg:text-[20px]'>Youtube</p></a>
               </div>
               {/* 3 */}
               <div>
