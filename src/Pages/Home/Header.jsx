@@ -53,7 +53,7 @@ const Header = () => {
           <div className='flex justify-between absolute bottom-[80px] w-[60%]'>
             <div className='bg-white w-[200px] h-[57px] rounded-full flex items-center justify-between px-3 '>
               <p className='font-medium text-black ml-[10px]'>Booking Now</p>
-              <a href="/">
+              <a href="https://www.booking.com/?msockid=37b1f26cc17d6d7133b8e00cc0556c7a">
                 <button className='w-[45px] h-[45px] bg-black rounded-full flex items-center justify-center'>
                   <img src={arrow} alt="arrow right" />
                 </button>
