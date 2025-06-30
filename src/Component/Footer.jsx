@@ -26,12 +26,11 @@ const Footer = () => {
           {/* button */}
           <a href='/contact' className='bg-white w-[195px] h-[57px] rounded-full flex items-center justify-between px-3 mx-auto mt-[30px]'>
             <p className='font-medium text-black ml-[10px] text-[18px]'>Get Started</p>
-            <a href="/">
-              <a href='/contact' className='w-[45px] h-[45px] bg-black rounded-full flex items-center justify-center cursor-pointer'>
-                <img src={arrow} alt="arrow right" />
-              </a>
-            </a>
+            <div className='w-[45px] h-[45px] bg-black rounded-full flex items-center justify-center cursor-pointer'>
+              <img src={arrow} alt="arrow right" />
+            </div>
           </a>
+
 
           {/* Navigation */}
           <div className='w-full max-w-[1320px] mx-auto flex flex-col lg:flex-row justify-between gap-12 lg:gap-0 p-6 mt-[50px]'>
